@@ -18,7 +18,7 @@ export default Layout;
 const StyledMain = styled.main`
 	/* background-color: ${({ theme }) => theme.colors.white}; */
 	background-color: bisque;
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
