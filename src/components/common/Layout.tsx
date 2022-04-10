@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../constants/theme';
+import './layout.css';
 
 const Layout = ({children}) => {
 
