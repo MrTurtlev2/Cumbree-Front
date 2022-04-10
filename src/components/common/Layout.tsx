@@ -16,8 +16,11 @@ const Layout = ({children}) => {
 export default Layout;
 
 const StyledMain = styled.main`
-	background-color: ${({ theme }) => theme.colors.white};
+	/* background-color: ${({ theme }) => theme.colors.white}; */
+	background-color: bisque;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	font-family: 'Quicksand', sans-serif !important;
 `;

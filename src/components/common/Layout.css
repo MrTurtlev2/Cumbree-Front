@@ -1,3 +1,5 @@
+@import "../../constants/typography/typography.css";
+
 * {
     box-sizing: border-box;
 }
@@ -25,7 +27,7 @@ body {
     padding: 0 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Quicksand", sans-serif !important;
 }
 
 article,
@@ -135,7 +137,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
+    font-family:'Quicksand', sans-serif;
     font-size: 1em;
 }
 
@@ -701,7 +703,7 @@ code {
     background-color: hsla(0, 0%, 0%, 0.04);
     border-radius: 3px;
     font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
+    "Liberation Mono", Menlo, Courier, monospace, "Quicksand";
     padding: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;

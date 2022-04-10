@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/common/Layout';
+import BookTab from '../components/menu/BookTab';
+import TopBar from '../components/menu/TopBar';
 
 
 const IndexPage = () => {
@@ -8,8 +10,8 @@ const IndexPage = () => {
 
 
 		<Layout>
-      rehgrehg
-			<MobileMenu />
+			<TopBar />
+			<BookTab />
 		</Layout>
 
 
@@ -17,9 +19,3 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
-
-const MobileMenu = styled.div`
-  width: 100%;
-  height: 50px;
-  background-color: red;
-`;
