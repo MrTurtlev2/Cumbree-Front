@@ -4,9 +4,9 @@ import RadishIcon from '../../images/RadishIcon';
 import BookTab from './BookTab';
 import Logo from '../../images/logo.webp';
 
-const TopBar = () => {
+const TopBar = ({onClick}) => {
 	return (
-		<TopBarWrapper>
+		<TopBarWrapper onClick={onClick}>
 			<RadishIcon svgHeight={70} svgWidth={80} />
 			<LogoWrapper>
 				<LogoImg src={Logo} />

@@ -23,4 +23,7 @@ const StyledMain = styled.main`
 	flex-direction: column;
 	width: 100%;
 	font-family: 'Quicksand', sans-serif !important;
+	@media(max-width: 750px) {
+		width: 100vw;
+	}
 `;
