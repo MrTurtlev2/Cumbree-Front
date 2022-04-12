@@ -5,7 +5,6 @@ import BgImage from '../images/radishBackground.webp';
 const MainPage = () => {
 	return (
 		<MainWrapper>
-			to jest main page
 			{/* <BgImageComponent /> */}
 			to jest main page
 			to jest main page
@@ -18,7 +17,7 @@ const MainPage = () => {
 			to jest main page
 			to jest main page
 
-			to jest main pageto jest main page
+			to jest main page
 			to jest main page
 			to jest main page
 		</MainWrapper>
@@ -42,4 +41,7 @@ const BgImageComponent = styled.div`
 const MainWrapper = styled.div`
 	height: 2000px;
 	overflow-y: auto;
+	@media(max-width: 750px) {
+		padding-top: 50px;
+	}
 `;

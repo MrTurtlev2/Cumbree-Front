@@ -5,7 +5,6 @@ import BgImage from '../images/radishBackground.webp';
 const ProfilePage = () => {
 	return (
 		<MainWrapper>
-			Profile page :DDDD
 			{/* <BgImageComponent /> */}
 
 			Profile page :DDDD
@@ -19,7 +18,7 @@ const ProfilePage = () => {
 			Profile page :DDDD
 			Profile page :DDDD
 			Profile page :DDDD
-			
+
 		</MainWrapper>
 	);
 };
@@ -41,4 +40,7 @@ const BgImageComponent = styled.div`
 const MainWrapper = styled.div`
 	height: 2000px;
 	overflow-y: auto;
+	@media(max-width: 750px) {
+		padding-top: 50px;
+	}
 `;

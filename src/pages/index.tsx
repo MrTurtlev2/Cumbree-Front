@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Layout from '../components/common/Layout';
 import Drawer from '../components/menu/Drawer';
 import TopBar from '../components/menu/TopBar';
@@ -24,13 +25,28 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
-			<TopBar onClick={() => setDrawerOpen(!isDrawerOpen)} />
+
 			<Drawer isDrawerOpen={isDrawerOpen} setPage={changePage} />
 
-			{returnPage()}
+			<PageWrapper className={isDrawerOpen ? 'open' : ''}>
+				<TopBar onClick={() => setDrawerOpen(!isDrawerOpen)} />
+				{returnPage()}
+			</PageWrapper>
 			
 		</Layout>
 	);
 };
 
 export default IndexPage;
+
+const PageWrapper = styled.div`
+	transform: rotate(0deg);
+	transition: all 0.5s;
+	opacity: 1;
+	&.open {
+		transform: rotate(-6deg);
+		opacity: 0.5;
+		/* transform: scale(0.5, 0.5) */
+	}
+
+`;

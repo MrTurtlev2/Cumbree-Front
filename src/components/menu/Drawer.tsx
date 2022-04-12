@@ -5,8 +5,13 @@ const Drawer = ({isDrawerOpen, setPage}) => {
 
 	return (
 		<DrawerWrapper className={isDrawerOpen ? 'open' : ''}>
-			<div onClick={()=>setPage(0)}>Main</div>
-			<div onClick={()=>setPage(1)}>drugie</div>
+			{isDrawerOpen && (
+				<Drawercontent>
+					<div onClick={()=>setPage(0)}>Main</div>
+					<div onClick={()=>setPage(1)}>drugie</div>
+				</Drawercontent>
+			)}
+			
 		</DrawerWrapper>
 	);
 };
@@ -20,7 +25,11 @@ const DrawerWrapper = styled.div`
 	width: 0px;
 	background-color: blue;
 	transition: all 0.3s;
+    z-index: 1;
 	&.open {
 		width: 300px;
 	}
+`;
+const Drawercontent = styled.div`
+
 `;
