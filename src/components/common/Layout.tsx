@@ -22,6 +22,7 @@ const StyledMain = styled.main`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	overflow-x: hidden;
 	font-family: 'Quicksand', sans-serif !important;
 	@media(max-width: 750px) {
 		width: 100vw;

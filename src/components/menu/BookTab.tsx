@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import BurgerMaenu from '../../images/BurgerManu';
 
-const BookTab = () => {
+const BookTab = ({onClick}) => {
 	return (
-		<BookTabWrapper>
+		<BookTabWrapper onClick={onClick}>
 			<BookTabSquare>
 				<BurgerMaenu />
 			</BookTabSquare>

@@ -6,13 +6,13 @@ import Logo from '../../images/logo.webp';
 
 const TopBar = ({onClick}) => {
 	return (
-		<TopBarWrapper onClick={onClick}>
+		<TopBarWrapper>
 			<RadishIcon svgHeight={70} svgWidth={80} />
 			<LogoWrapper>
 				<LogoImg src={Logo} />
 			</LogoWrapper>
 			
-			<BookTab />
+			<BookTab onClick={onClick} />
 		</TopBarWrapper>
 	);
 };
