@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import BgImage from '../images/radishBackground.webp';
+import { getRecipesAsync, selectRecipes, deleteRecipe } from '../features/recipesSlice';
 
 const MainPage = () => {
+
+	const recipesArray = useSelector(selectRecipes);
+	const dispatch = useDispatch();
+
+	useEffect(()=> {
+		dispatch(getRecipesAsync());
+	}, []);
+
+
 	return (
 		<MainWrapper>
 			{/* <BgImageComponent /> */}
-			to jest main page
-			to jest main page
-			to jest main page
-			to jest main page
-			to jest main page
-			to jest main page
-			to jest main page
-			to jest main page
-			to jest main page
-			to jest main page
-
-			to jest main page
-			to jest main page
-			to jest main page
+			{recipesArray.map((item)=> <span key={item.id}>{item.title}</span>)}
+			rrgeg
+			<div onClick={()=>dispatch(deleteRecipe(1))}>usuń</div>
 		</MainWrapper>
 	);
 };

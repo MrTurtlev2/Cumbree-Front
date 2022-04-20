@@ -5,6 +5,8 @@ import Drawer from '../components/menu/Drawer';
 import TopBar from '../components/menu/TopBar';
 import MainPage from './MainPage';
 import ProfilePage from './ProfilePage';
+import { store } from '../app/store';
+import { Provider } from 'react-redux';
 
 const IndexPage = () => {
 
@@ -24,16 +26,18 @@ const IndexPage = () => {
 	};
 
 	return (
-		<Layout>
+		<Provider store={store}>
+			<Layout>
 
-			<Drawer isDrawerOpen={isDrawerOpen} setPage={changePage} closeDrawer={()=>setDrawerOpen(false)} />
+				<Drawer isDrawerOpen={isDrawerOpen} setPage={changePage} closeDrawer={()=>setDrawerOpen(false)} />
 
-			<PageWrapper className={isDrawerOpen ? 'open' : ''}>
-				<TopBar onClick={() => setDrawerOpen(!isDrawerOpen)} />
-				{returnPage()}
-			</PageWrapper>
+				<PageWrapper className={isDrawerOpen ? 'open' : ''}>
+					<TopBar onClick={() => setDrawerOpen(!isDrawerOpen)} />
+					{returnPage()}
+				</PageWrapper>
 			
-		</Layout>
+			</Layout>
+		</Provider>
 	);
 };
 

@@ -4,7 +4,7 @@ import BookTab from './BookTab';
 
 const Drawer = ({isDrawerOpen, setPage, closeDrawer}) => {
 
-	const [isDrawerClosing, setDrawerClosing] = useState(false);
+	const [isDrawerClosing, setDrawerClosing] = useState(null);
 
 	const handleNavigation = (pageNumber) => {
 		if (pageNumber == null) {
@@ -17,15 +17,6 @@ const Drawer = ({isDrawerOpen, setPage, closeDrawer}) => {
 			setDrawerClosing(true);
 		}
 	};
-	
-	// const handleAnimationClass = () => {
-	// 	if (isDrawerClosing)
-	// 		return 'closing';
-	// 	if (isDrawerOpen) {
-	// 		// setDrawerClosing(false);
-	// 		return 'open';
-	// 	}
-	// };
 
 
 	return (
