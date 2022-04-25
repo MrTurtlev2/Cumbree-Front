@@ -1,33 +1,26 @@
+import { navigate } from 'gatsby';
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import styled, { keyframes } from 'styled-components';
 import BookTab from './BookTab';
 
-const Drawer = ({isDrawerOpen, setPage, closeDrawer}) => {
+const Drawer = ({isDrawerOpen, closeDrawer}) => {
 
-	const [isDrawerClosing, setDrawerClosing] = useState(null);
-
-	const handleNavigation = (pageNumber) => {
-		if (pageNumber == null) {
+	const handleNavigation = (pagePath : string) => {
+		if (isDrawerOpen != null) {
 			closeDrawer();
-			setDrawerClosing(true);
-		}
-		else if (isDrawerOpen) {
-			setPage(pageNumber);
-			closeDrawer();
-			setDrawerClosing(true);
+			navigate(pagePath);
 		}
 	};
 
 
 	return (
-		<DrawerWrapper className={isDrawerOpen && 'open'}>
-			{/* <DrawerWrapper className={isDrawerClosing ? 'closing' : (isDrawerOpen && 'open')}>
-		<DrawerWrapper className={handleAnimationClass()}> */}
+		<DrawerWrapper className={isDrawerOpen != null ? (isDrawerOpen ? 'open' : 'closing') : ''}>
 			{isDrawerOpen && (
 				<Drawercontent>
 					<BookTab onClick={()=> handleNavigation(null)}/>
-					<div onClick={()=> handleNavigation(0)}>Main</div>
-					<div onClick={()=> handleNavigation(1)}>drugie</div>
+					<div onClick={()=> handleNavigation('/')}>Main</div>
+					<div onClick={()=> handleNavigation('/ProfilePage')}>drugie</div>
 				</Drawercontent>
 			)}
 			
@@ -60,11 +53,12 @@ const DrawerWrapper = styled.div`
 	height: 100vh;
 	background-color: #59598f;
     z-index: 1;
+	animation: none;
 	&.open {
 		animation: ${bounceAnimation} 1.2s forwards;
 	}
 	&.closing {
-		animation: ${closeAnimation} 1.2s forwards;
+		animation: ${closeAnimation} 0.5s forwards;
 	}
 `;
 const Drawercontent = styled.div``;

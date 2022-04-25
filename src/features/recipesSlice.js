@@ -26,16 +26,16 @@ export const recipesSlice = createSlice({
 		builder
 			.addCase(getRecipesAsync.pending, (state, action) => {
 			// state.recipes = action.payload;
-				console.log('pending');
+				// console.log('pending');
 			})
 			.addCase(getRecipesAsync.fulfilled, (state, action) => {
 				state.recipes = action.payload;
 				console.log(action);
-				console.log('fulfield');
+				// console.log('fulfield');
 			})
 			.addCase(getRecipesAsync.rejected, (state, action) => {
 				// state.recipes = action.payload;
-				console.log('rejected');
+				// console.log('rejected');
 			});
 	},
 });
