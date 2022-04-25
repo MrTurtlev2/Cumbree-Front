@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import Layout from '../components/common/Layout';
 import Drawer from '../components/menu/Drawer';
 import TopBar from '../components/menu/TopBar';
-import MainPage from './MainPage';
-import ProfilePage from './ProfilePage';
-import { store } from '../app/store';
+import { store } from '../state/store';
 import { Provider } from 'react-redux';
 
 const IndexPage = () => {
@@ -18,12 +16,6 @@ const IndexPage = () => {
 		setPageIndex(i);
 	};
 
-	const returnPage = () => {
-		switch(pageIndex) {
-		case 0 : return <MainPage />;
-		case 1 : return <ProfilePage />;
-		}
-	};
 
 	return (
 		<Provider store={store}>
@@ -33,9 +25,7 @@ const IndexPage = () => {
 
 				<PageWrapper className={isDrawerOpen ? 'open' : ''}>
 					<TopBar onClick={() => setDrawerOpen(!isDrawerOpen)} />
-					{returnPage()}
-				</PageWrapper>
-			
+				</PageWrapper>			
 			</Layout>
 		</Provider>
 	);
