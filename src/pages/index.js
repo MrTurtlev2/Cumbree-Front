@@ -29,6 +29,7 @@ export default IndexPage;
 
 const PageWrapper = styled.div`
 	opacity: 1;
+	overflow-y: auto;
 `;
 const TilesWrapper = styled.div`
 	padding: 50px 35px;

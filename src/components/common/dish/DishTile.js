@@ -9,7 +9,7 @@ const DishTile = ({item}) => {
 	return (
 		<TileWrapper>
 			<BookTabSmall left={10} right='auto' />
-			<BookTabSmall left={80} right='auto' />
+			<BookTabSmall left={70} right='auto' />
 			<TileImageWrapper>
 				<TileImage />
 			</TileImageWrapper>
@@ -51,17 +51,19 @@ const TileBottom = styled.div`
     border-radius: 0 0 8px 8px;
     text-align: center;
     padding-top: 15px;
+    background-color: #f6e4e3;
+    background-image: linear-gradient(to top, #f6e4e3 0%, #fff 45%);
 `;
 const TileType = styled.div`
     color: #FE6868;
-    font-weight: ${({ theme }) => theme.wheight.bold};
+    font-weight: ${({ theme }) => theme.weight.bold};
     font-size: ${({ theme }) => theme.size.vsmall};
     
 `;
 
 const TileTitle = styled.div`
     margin: 10px 0 35px 0;
-    font-weight: ${({ theme }) => theme.wheight.bold};
+    font-weight: ${({ theme }) => theme.weight.bold};
     font-size: ${({ theme }) => theme.size.big};
     text-transform: uppercase;
 `;

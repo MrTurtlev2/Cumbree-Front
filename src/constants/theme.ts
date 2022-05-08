@@ -6,7 +6,7 @@ export const theme = {
 		lightGrey: 'rgba(195, 195, 195, 0.44)',
 		grey: '#AEAEAE',
 	},
-	wheight: {
+	weight: {
 		bold: 800,
 	},
 	size: {
