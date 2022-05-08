@@ -1,12 +1,11 @@
 import { navigate } from 'gatsby';
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import BookTab from './BookTab';
+import BookTab from '../common/book-tab/BookTab';
 
 const Drawer = ({isDrawerOpen, closeDrawer}) => {
 
-	const handleNavigation = (pagePath : string) => {
+	const handleNavigation = (pagePath) => {
 		if (isDrawerOpen != null) {
 			closeDrawer();
 			navigate(pagePath);
@@ -18,7 +17,7 @@ const Drawer = ({isDrawerOpen, closeDrawer}) => {
 		<DrawerWrapper className={isDrawerOpen != null ? (isDrawerOpen ? 'open' : 'closing') : ''}>
 			{isDrawerOpen && (
 				<Drawercontent>
-					<BookTab onClick={()=> handleNavigation(null)}/>
+					<BookTab onClick={()=> handleNavigation(null)} right={0} />
 					<div onClick={()=> handleNavigation('/')}>Main</div>
 					<div onClick={()=> handleNavigation('/ProfilePage')}>drugie</div>
 				</Drawercontent>
@@ -52,7 +51,7 @@ const DrawerWrapper = styled.div`
 	width: 100vw;
 	height: 100vh;
 	background-color: #59598f;
-    z-index: 1;
+    z-index: 3;
 	animation: none;
 	&.open {
 		animation: ${bounceAnimation} 1.2s forwards;

@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import BurgerMaenu from '../../images/BurgerManu';
+// import BurgerMaenu from '../../images/BurgerManu';
 
-const BookTab = ({onClick}) => {
+const BookTabSmall = ({onClick, left, right}) => {
 	return (
-		<BookTabWrapper onClick={onClick}>
+		<BookTabWrapper onClick={onClick} left={left} right={right}>
 			<BookTabSquare>
-				<BurgerMaenu />
+				{/* <BurgerMaenu /> */}
+                Karolina S
 			</BookTabSquare>
 			<TriangleWrapper>
 				<Triangle />
@@ -16,15 +17,16 @@ const BookTab = ({onClick}) => {
 	);
 };
 
-export default BookTab;
+export default BookTabSmall;
 
 const BookTabWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    width: 80px;
+    width: 50px;
     position: absolute;
+    left: ${(props) => props?.left}px;
+    right: ${(props) => props?.right}px;
     top: 0;
-    right: 0;
 `;
 
 const BookTabSquare = styled.div`
@@ -32,8 +34,8 @@ const BookTabSquare = styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.white};
-    height: 70px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
 `;
 
 const TriangleWrapper = styled.div`
@@ -49,11 +51,11 @@ const Triangle = styled.div`
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 32px 70px 0 0;
+    border-width: 25px 50px 0 0;
     border-color: #FFF transparent transparent transparent;
     &.right {
         right: 0;
         left: auto;
-        border-width: 32px 0 0 70px;
+        border-width: 25px 0 0 50px;
     }
 `;

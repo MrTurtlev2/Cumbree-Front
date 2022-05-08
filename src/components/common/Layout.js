@@ -18,7 +18,7 @@ const Layout = ({children}) => {
 		<ThemeProvider theme={theme}>
 			<Drawer isDrawerOpen={drawerState} closeDrawer={() => dispatch(changeDrawerState(false))} />
 			<StyledMain>
-				<TopBar onClick={() => dispatch(changeDrawerState(true))} />
+				<TopBar onClick={() => dispatch(changeDrawerState(true))} right={0} left='auto' />
 				<PageContainer>
 					{children}
 				</PageContainer>
