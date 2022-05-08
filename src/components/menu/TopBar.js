@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import RadishIcon from '../../images/RadishIcon';
-import BookTab from './BookTab';
+import BookTab from '../common/book-tab/BookTab';
 import Logo from '../../images/logo.webp';
 
 const TopBar = ({onClick}) => {
@@ -11,8 +11,7 @@ const TopBar = ({onClick}) => {
 			<LogoWrapper>
 				<LogoImg src={Logo} />
 			</LogoWrapper>
-			
-			<BookTab onClick={onClick} />
+			<BookTab onClick={onClick} right={0} left='auto'/>
 		</TopBarWrapper>
 	);
 };
@@ -28,6 +27,7 @@ const TopBarWrapper = styled.div`
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 2;
 `;
 
 const LogoWrapper = styled.div`
