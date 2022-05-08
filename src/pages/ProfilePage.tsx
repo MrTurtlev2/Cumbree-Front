@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import BgImage from '../images/radishBackground.webp';
+import { getRecipesAsync, selectRecipes, deleteRecipe } from '../features/recipesSlice';
+import Layout from '../components/common/Layout';
 
 const ProfilePage = () => {
+
+	const recipesArray = useSelector(selectRecipes);
+	const dispatch = useDispatch();
+
+	useEffect(()=> {
+		dispatch(getRecipesAsync());
+	}, []);
+
+
 	return (
-		<MainWrapper>
-			{/* <BgImageComponent /> */}
+		<Layout>
+			<MainWrapper>
+				{/* <BgImageComponent /> */}
 
 			Profile page :DDDD
 			Profile page :DDDD
@@ -18,8 +31,10 @@ const ProfilePage = () => {
 			Profile page :DDDD
 			Profile page :DDDD
 			Profile page :DDDD
+				{recipesArray.map((item)=> <span key={item.id}>{item.title}</span>)}
 
-		</MainWrapper>
+			</MainWrapper>
+		</Layout>
 	);
 };
 
@@ -40,7 +55,4 @@ const BgImageComponent = styled.div`
 const MainWrapper = styled.div`
 	height: 2000px;
 	overflow-y: auto;
-	@media(max-width: 750px) {
-		padding-top: 50px;
-	}
 `;

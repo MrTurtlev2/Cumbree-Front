@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import BgImage from '../images/radishBackground.webp';
 import { getRecipesAsync, selectRecipes, deleteRecipe } from '../features/recipesSlice';
+import { navigate } from 'gatsby';
 
 const MainPage = () => {
 
@@ -20,6 +21,7 @@ const MainPage = () => {
 			{recipesArray.map((item)=> <span key={item.id}>{item.title}</span>)}
 			rrgeg
 			<div onClick={()=>dispatch(deleteRecipe(1))}>usuń</div>
+			<div onClick={()=>navigate('/ProfilePage')}>usuń</div>
 		</MainWrapper>
 	);
 };
