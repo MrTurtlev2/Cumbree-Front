@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import DishTile from '../components/common/dish/DishTile';
 import Layout from '../components/common/Layout';
-import { getRecipesAsync, selectRecipes } from '../features/recipesSlice';
+import { getRecipesAsync, selectRecipes, searchRecipe } from '../features/recipesSlice';
 
 const IndexPage = () => {
 
@@ -13,10 +13,19 @@ const IndexPage = () => {
 	useEffect(()=> {
 		dispatch(getRecipesAsync());
 	}, []);
+
+	
+	const searchRecipes = (e) => {
+		let a = recipesArray.filter(v => v.title.toLowerCase().includes(e));
+		console.log(a);
+		return a;
+	};
+
 	
 	return (
 		<Layout>
 			<PageWrapper>
+				<input type='text' onChange={(e) => searchRecipes(e.target.value)} />
 				<TilesWrapper>
 					{recipesArray.map((item)=> <DishTile key={item.id} item={item} />)}
 				</TilesWrapper>
