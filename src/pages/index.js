@@ -9,23 +9,21 @@ const IndexPage = () => {
 
 	const recipesArray = useSelector(selectRecipes);
 	const dispatch = useDispatch();
+	const [filteredRecipes, setFiltered] = useState(recipesArray);
 	let filter;
 
 	useEffect(()=> {
 		dispatch(getRecipesAsync());
+		
 	}, []);
-
-
 	
 	const searchRecipes = (value) => {
 		filter = recipesArray.filter(item => item.title.toLowerCase().includes(value));
 		setFiltered(filter);
 	};
 
-	const [filteredRecipes, setFiltered] = useState(recipesArray);
-	
-
 	console.log(filteredRecipes);
+	console.log(recipesArray);
 
 	return (
 		<Layout>
