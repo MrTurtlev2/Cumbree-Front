@@ -23,7 +23,6 @@ export const recipesSlice = createSlice({
 		},
 		searchRecipe: (state, {payload}) => {
 			state.recipes = state.recipes.filter((recipe) => payload == recipe ) ;
-			console.log(state.recipes = state.recipes.filter((recipe) => payload == recipe.title ));
 		},
 	},
 	extraReducers: (builder) => {

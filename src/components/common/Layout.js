@@ -12,8 +12,6 @@ const Layout = ({children}) => {
 	const drawerState = useSelector((state) => state.drawerState.value);
 	const dispatch = useDispatch();
 
-	console.log(drawerState);
-
 	return (
 		<ThemeProvider theme={theme}>
 			<Drawer isDrawerOpen={drawerState} closeDrawer={() => dispatch(changeDrawerState(false))} />
