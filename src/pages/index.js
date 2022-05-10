@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import DishTile from '../components/common/dish/DishTile';
 import Layout from '../components/common/Layout';
 import { getRecipesAsync, selectRecipes } from '../features/recipesSlice';
+import SearchBar from '../components/common/search-bar/SearchBar';
 
 const IndexPage = () => {
 
@@ -24,7 +25,7 @@ const IndexPage = () => {
 	return (
 		<Layout>
 			<PageWrapper>
-				<input type='text' value={search} onChange={searchRecipes} />
+				<SearchBar value={search} onChange={searchRecipes} placeholder='wyszukaj przepisy' />
 				<TilesWrapper>
 					{filteredRecipes.map((item)=> <DishTile key={item.id} item={item} />)}
 					{filteredRecipes.length == 0 && <p>Nie znaleziono przepisów</p>}
