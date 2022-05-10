@@ -9,29 +9,25 @@ const IndexPage = () => {
 
 	const recipesArray = useSelector(selectRecipes);
 	const dispatch = useDispatch();
-	const [filteredRecipes, setFiltered] = useState(recipesArray);
-	let filter;
+	const [search, setSearch] = useState('');
+
+	const filteredRecipes = search ? recipesArray.filter(recipe => recipe.title.toLowerCase().includes(search)) : recipesArray;
 
 	useEffect(()=> {
 		dispatch(getRecipesAsync());
-		
 	}, []);
-	
-	const searchRecipes = (value) => {
-		filter = recipesArray.filter(item => item.title.toLowerCase().includes(value));
-		setFiltered(filter);
-	};
 
-	console.log(filteredRecipes);
-	console.log(recipesArray);
+	const searchRecipes = (e) => {
+		setSearch(e.target.value);
+	};
 
 	return (
 		<Layout>
 			<PageWrapper>
-				<input type='text' onChange={(e) => searchRecipes(e.target.value)} />
+				<input type='text' value={search} onChange={searchRecipes} />
 				<TilesWrapper>
 					{filteredRecipes.map((item)=> <DishTile key={item.id} item={item} />)}
-					{filteredRecipes.length == 0 && <p>rfrfrf</p>}
+					{filteredRecipes.length == 0 && <p>Nie znaleziono przepisów</p>}
 				</TilesWrapper>
 			</PageWrapper>			
 		</Layout>
