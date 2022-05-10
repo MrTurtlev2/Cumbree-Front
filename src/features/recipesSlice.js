@@ -21,6 +21,9 @@ export const recipesSlice = createSlice({
 		deleteRecipe: (state, {payload}) => {
 			state.recipes = state.recipes.filter((recipe) => payload != recipe.id ) ;
 		},
+		searchRecipe: (state, {payload}) => {
+			state.recipes = state.recipes.filter((recipe) => payload == recipe ) ;
+		},
 	},
 	extraReducers: (builder) => {
 		builder
@@ -40,7 +43,7 @@ export const recipesSlice = createSlice({
 	},
 });
 
-export const { deleteRecipe } = recipesSlice.actions;
+export const { deleteRecipe, searchRecipe } = recipesSlice.actions;
 
 export const selectRecipes = state => state.recipes.recipes;
 
