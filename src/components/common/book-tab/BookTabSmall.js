@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-// import BurgerMaenu from '../../images/BurgerManu';
 
-const BookTabSmall = ({onClick, left, right}) => {
+const BookTabSmall = ({onClick, left, right, text, iconUrl}) => {
 	return (
 		<BookTabWrapper onClick={onClick} left={left} right={right}>
 			<BookTabSquare>
-				{/* <BurgerMaenu /> */}
-                Karolina S
+				{iconUrl && <BookTabImage src={iconUrl} />}
+				<span>{text}</span>
 			</BookTabSquare>
 			<TriangleWrapper>
 				<Triangle />
@@ -28,16 +27,25 @@ const BookTabWrapper = styled.div`
     right: ${(props) => props?.right}px;
     top: 0;
 `;
-
 const BookTabSquare = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: ${({ theme }) => theme.colors.white};
     height: 50px;
     width: 50px;
+    padding-top: 5;
+    text-align: center;
+    span {
+        width: 45px;
+        font-size: 10px;
+    }
 `;
-
+const BookTabImage = styled.img`
+    height: 35px;
+    width: 35px;
+`;
 const TriangleWrapper = styled.div`
     display: flex;
     flex-direction: row;

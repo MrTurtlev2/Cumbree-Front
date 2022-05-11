@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import dishImage from '../../../images/dish.jpg';
 import clockImage from '../../../images/clock.png';
 import BookTabSmall from '../book-tab/BookTabSmall';
-
+import userIcon from '../../../images/profileImage.png';
 
 const DishTile = ({item}) => {
 	return (
 		<TileWrapper>
-			<BookTabSmall left={10} right='auto' />
+			<BookTabSmall left={10} right='auto' text='Karolina' iconUrl={userIcon} />
 			<BookTabSmall left={70} right='auto' />
 			<TileImageWrapper>
 				<TileImage />
@@ -43,7 +43,6 @@ const TileImage = styled.div`
     height: 100%;
     background-position: center;
 `;
-
 const TileBottom = styled.div`
     display: flex;
     flex-direction: column;
@@ -60,7 +59,6 @@ const TileType = styled.div`
     font-size: ${({ theme }) => theme.size.vsmall};
     
 `;
-
 const TileTitle = styled.div`
     margin: 10px 0 35px 0;
     font-weight: ${({ theme }) => theme.weight.bold};
